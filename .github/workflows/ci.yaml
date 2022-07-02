@@ -14,6 +14,8 @@ jobs:
         run: make
       - name: Test
         run: make test test-stackless-handle test-nodejs test-nodejs-cps
+      - name: Prepare third-party libraries
+        run: make -C thirdparty install
       - name: Compile myself (Lua)
         run: ./lunarml LunarML.mlb
       - name: Compile myself (JavaScript)
